@@ -1,0 +1,38 @@
+//----- Use this in scss, instead in html file.
+//----- Example... @extend %grid-4, %grid--tab-2, %grid--mob-1;
+%grid {
+  float: left;
+  overflow: hidden;
+  &-1 {
+    @extend %grid;
+    width: percentage(1/1);
+  }
+  &-2 {
+    @extend %grid;
+    width: percentage(1/2);
+  }
+  &-3 {
+    @extend %grid;
+    width: percentage(1/3);
+  }
+  &-4 {
+    @extend %grid;
+    width: percentage(1/4);
+  }
+  @include bp(tablet) {
+    &--tab-1 {
+      width: percentage(1/1);
+    }
+    &--tab-2 {
+      width: percentage(1/2);
+    }
+  }
+  @include bp(mobile) {
+    &--mob-1 {
+      width: percentage(1/1);
+    }
+    &--mob-2 {
+      width: percentage(1/2);
+    }
+  }
+}

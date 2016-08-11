@@ -1,0 +1,28 @@
+.b-social {
+
+  &__item {
+    display: inline-block;
+    //----- Set width, height and background size;
+    //----- ***This isn't necessary if you use image sprite gulp plugin
+  }
+  &__facebook {
+    @extend .b-social__item;
+    //----- For every social item include background image/icon.
+    //----- ***This isn't necessary if you use image sprite gulp plugin
+  }
+  &__twitter {
+    @extend .b-social__item;
+  }
+  &__instagram {
+    @extend .b-social__item;
+  }
+  &__google-plus {
+    @extend .b-social__item;
+  }
+  &__pinterest {
+    @extend .b-social__item;
+  }
+  &__whatsapp {
+    @extend .b-social__item;
+  }
+}

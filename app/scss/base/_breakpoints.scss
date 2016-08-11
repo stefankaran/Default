@@ -1,0 +1,27 @@
+@mixin bp($point) {
+  @if $point == mobileSmall {
+    @media (max-width: 375px) {
+      @content;
+    }
+  }
+  @if $point == mobile {
+    @media (max-width: 750px) {
+      @content;
+    }
+  }
+  @if $point == overMobile {
+    @media (min-width: 751px) {
+      @content;
+    }
+  }
+  @if $point == tablet {
+    @media (min-device-width : 751px) and (max-device-width : 1024px){
+      @content;
+    }
+  }
+  @if $point == desktop {
+    @media (min-width: 1025px){
+      @content;
+    }
+  }
+}

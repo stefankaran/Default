@@ -1,0 +1,16 @@
+html {}
+body {}
+.wrapper {
+  @extend %center-block;
+  width: 100%;
+  // max-width:;
+  &--page {
+    // padding:;
+  }
+  &--full-width {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}
+.l-main {}
+.l-sidebar {}

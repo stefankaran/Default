@@ -1,0 +1,21 @@
+.b-media-list {
+  width: 100%;
+  overflow: hidden;
+  &__item {
+    overflow: hidden;
+  }
+  &__content {
+    width: 50%;
+    float: left; //----- If you want to put image on the left side, set __content to float: right;
+    // @extend %grid-2;
+  }
+  &__heading {}
+  &__excerpt {}
+  &__read-more {}
+  &__media {
+    width: 50%;
+    float: left;
+    // @extend %grid-2;
+  }
+  &__image {}
+}

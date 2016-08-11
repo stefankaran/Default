@@ -1,0 +1,20 @@
+{
+  "name": "diesel",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Stefan Karan <stefan.karan@diwanee.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/stefankaran/diesel",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "jquery": "^3.1.0"
+  }
+}
