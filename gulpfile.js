@@ -29,14 +29,16 @@ reload = browserSync.reload;
 gulp.task("scripts", function() {
   gulp.src("app/js/*.js")
   .pipe(sourcemaps.init())
-  // .pipe(order([
-  //     "app/js/jquery.min.js",
-  // ]))
+  .pipe(jshint())
+  .pipe(order([
+      "app/js/jquery.min.js",
+  ]))
   .pipe(concat('main.js'))
   .pipe(rename({
     suffix: '.min'
   }))
-  // .pipe(uglify())
+  .pipe(uglify())
+  .pipe(jshint.reporter("default"))
   .pipe(sourcemaps.write())
   .pipe(gulp.dest('app/assets/js/'))
   .pipe(reload({
