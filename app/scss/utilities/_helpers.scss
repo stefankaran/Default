@@ -28,7 +28,7 @@
   margin-right: auto;
 }
 //----- Shortcuts to hide element on specific device
-%hide-on {
+.hide-on {
   &--desktop {
     @include bp(desktop) {
       display: none;

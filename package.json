@@ -21,9 +21,11 @@
     "gulp-rename": "^1.2.2",
     "gulp-responsive": "^2.4.0",
     "gulp-sass": "^2.2.0",
+    "gulp-sourcemap": "^1.0.1",
     "gulp-sprite-generator": "^0.2.3",
     "gulp-uglify": "^1.5.3",
     "gulp-uglifycss": "^1.0.6",
+    "gulp-uncss": "^1.0.6",
     "gulp.spritesmith": "^6.2.1",
     "jshint": "^2.9.2",
     "spritesheet-templates": "^10.1.4"

@@ -5,10 +5,12 @@ var gulp = require("gulp"),
 imageResize = require('gulp-image-resize'),
 uglify = require("gulp-uglify"),
 uglifycss = require('gulp-uglifycss'),
+uncss = require('gulp-uncss'),
 rename = require("gulp-rename"),
 concat = require('gulp-concat'),
 order = require('gulp-order'),
 sass = require("gulp-sass"),
+sourcemaps = require('gulp-sourcemaps'),
 del = require('del'),
 htmlmin = require('gulp-htmlmin'),
 imagemin = require('gulp-imagemin'),
@@ -26,6 +28,7 @@ reload = browserSync.reload;
 // /////////////////////////////////////////////////
 gulp.task("scripts", function() {
   gulp.src("app/js/*.js")
+  .pipe(sourcemaps.init())
   // .pipe(order([
   //     "app/js/jquery.min.js",
   // ]))
@@ -33,7 +36,8 @@ gulp.task("scripts", function() {
   .pipe(rename({
     suffix: '.min'
   }))
-  .pipe(uglify())
+  // .pipe(uglify())
+  .pipe(sourcemaps.write())
   .pipe(gulp.dest('app/assets/js/'))
   .pipe(reload({
     stream: true
@@ -45,6 +49,7 @@ gulp.task("scripts", function() {
 // /////////////////////////////////////////////////
 gulp.task("styles", function() {
   gulp.src("app/scss/main.scss")
+  .pipe(sourcemaps.init())
   .pipe(plumber())
   .pipe(sass({
     style: "compressed"
@@ -57,6 +62,10 @@ gulp.task("styles", function() {
     // "maxLineLen": 80,
     "uglyComments": true
   }))
+  .pipe(uncss({
+    html: ['app/*.html']
+  }))
+  .pipe(sourcemaps.write())
   .pipe(gulp.dest("app/assets/css/"))
   .pipe(reload({
     stream: true
